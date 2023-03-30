@@ -1,0 +1,59 @@
+<nav>
+    <a>
+      <h1 style="color: crimson; font-size: 30px">Logo</h1>
+    </a>
+  </nav>
+  <!-- Sidebar navigation -->
+  <div>
+    <div>
+      <nav>
+        <div>
+          <ul style="list-style: none; display: flex; gap: 30px">
+            <li>
+              <a style="text-decoration: underline"> Profile </a>
+            </li>
+            <!-- Calling SignOut() Api from AuthService -->
+            <li>
+              <a (click)="authService.SignOut()" style="cursor: pointer">
+                Log out
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- Main content -->
+      <main role="main">
+        <div>
+          <div>
+            <h1 style="color: crimson">Profile</h1>
+          </div>
+          <!-- Show user data when logged in -->
+          <div *ngIf="authService.userData as user">
+            <div>
+              <div class="media">
+                <img src="{{(user.photoURL) ? user.photoURL : '/auth/src/assets/5907.jpg'}}"
+                  alt="{{user.displayName}}">
+                <div style="color: black">
+                  <h1>
+                    Hello:
+                    <strong>{{
+                      user.displayName ? user.displayName : "User"
+                    }}</strong>
+                  </h1>
+                  <p>
+                    User ID: <strong>{{ user.uid }}</strong>
+                  </p>
+                  <p>
+                    Email: <strong>{{ user.email }}</strong>
+                  </p>
+                  <p>
+                    Email Verified: <strong>{{ user.emailVerified }}</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>

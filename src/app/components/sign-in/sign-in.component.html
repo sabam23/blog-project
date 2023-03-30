@@ -1,0 +1,29 @@
+<div class="sign-in">
+    <form [formGroup]="loginForm">
+        <label>
+            Username
+            <br>           
+            <input type="email" formControlName="username" placeholder="Email address" #userName>
+        </label>
+        <label>
+            Password
+            <br>
+            <input type="password" formControlName="password" placeholder="Password" #userPwd>
+        </label>
+
+        <button class="submit-btn" type="submit" (click)="authService.SignIn(userName.value, userPwd.value)">
+            SIGN IN
+        </button>
+
+        <button class="google-btn" type="button" (click)="authService.GoogleAuth()">
+            <i class="fab fa-google-plus-g"></i>
+            Log in with Google
+
+            <img src="https://img.icons8.com/color/48/null/google-logo.png"/>
+        </button>
+    </form>
+
+    <span routerLink="/forgot-password" class="forget-password">Forgot Password?</span>
+
+    <span class="register-user-link" routerLink="/register-user">Don't have an account?<span>  Sign Up</span></span>
+</div>

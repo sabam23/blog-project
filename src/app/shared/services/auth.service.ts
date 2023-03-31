@@ -74,7 +74,7 @@ export class AuthService {
         window.alert('Password reset email sent, check your inbox.');
       })
       .catch((error) => {
-        window.alert(error);
+        this.errorMsg = error.message;
       });
   }
   // when the user is logged in and the email is confirmed, it returns true.

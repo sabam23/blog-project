@@ -17,6 +17,7 @@ import { RouterModule } from '@angular/router';
 import { environment } from 'enviroment';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { ErrorMessagePipe } from './shared/pipes/error-message.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     SignUpComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
-    NavBarComponent
+    NavBarComponent,
+    ErrorMessagePipe
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),

@@ -90,13 +90,17 @@ table {
 
 .error-container {
     font-family: 'Roboto', sans-serif;
-    width: 260px;
+    width: 274px;
     font-size: 14px;
     color: red;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
     align-items: center;
+
+    & > p {
+        text-align: left;
+    }
 
     & > img {
         height: 22px;

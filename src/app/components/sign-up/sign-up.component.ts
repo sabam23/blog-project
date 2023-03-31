@@ -14,7 +14,7 @@ export class SignUpComponent implements OnInit{
   constructor (public authService: AuthService) {}
 
   ngOnInit(): void {
-    
+    this.authService.errorMsg = '';
   }
 
   registrationForm = new FormGroup({

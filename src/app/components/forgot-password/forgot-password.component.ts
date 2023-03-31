@@ -13,5 +13,6 @@ export class ForgotPasswordComponent implements OnInit {
   ) { }
   
   ngOnInit() {
+    this.authService.errorMsg = '';
   }
 }

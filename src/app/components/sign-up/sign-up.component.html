@@ -1,56 +1,88 @@
 <div class="sign-up">
-    <form [formGroup]="registrationForm">
-        <label>
-            Email
-            <br>
-            <input type="email" formControlName="email" placeholder="Email address" #userEmail>
-        </label>
+  <form [formGroup]="registrationForm">
+    <label>
+      Email
+      <br />
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="Email address"
+        #userEmail
+      />
+    </label>
 
-        <div
-        class="error-container"
-        *ngIf="registrationForm.get('email')?.touched &&
-        registrationForm.get('email')?.invalid"
-      >
-        <img  src="https://img.icons8.com/color/48/null/cancel--v1.png"/>
-        <p>
-            Invalid Email Format
-        </p>
-      </div>
+    <div
+      class="error-container"
+      *ngIf="
+        registrationForm.get('email')?.touched &&
+        registrationForm.get('email')?.invalid
+      "
+    >
+      <img src="https://img.icons8.com/color/48/null/cancel--v1.png" />
+      <p>
+        The email address is badly formatted
+      </p>
+    </div>
 
-        <label>
-            Password
-            <br>
-            <input type="password" formControlName="password" placeholder="Password" #userPwd>
-        </label>
+    <label>
+      Password
+      <br />
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="Password"
+        #userPwd
+      />
+    </label>
 
-        <label>
-            Repeat Password
-            <br>
-            <input type="password"  formControlName="repeatPassword" placeholder="Repeat Password" #repPassword>
-        </label>
+    <label>
+      Repeat Password
+      <br />
+      <input
+        type="password"
+        formControlName="repeatPassword"
+        placeholder="Repeat Password"
+        #repPassword
+      />
+    </label>
 
-        <div
-        class="error-container"
-        *ngIf="
+    <div
+      class="error-container"
+      *ngIf="
         registrationForm.get('repeatPassword')?.touched &&
         registrationForm.invalid &&
         registrationForm.get('repeatPassword')?.value !==
-        registrationForm.get('password')?.value
-        "
-      >
-        <img  src="https://img.icons8.com/color/48/null/cancel--v1.png"/>
-        <p>
-          Password doesn't match
-        </p>
-      </div>
+          registrationForm.get('password')?.value
+      "
+    >
+      <img src="https://img.icons8.com/color/48/null/cancel--v1.png" />
+      <p>Password doesn't match</p>
+    </div>
 
-        <button type="submit" [disabled]="registrationForm.invalid" class="submit-btn" (click)="authService.SignUp(userEmail.value, userPwd.value)">SIGN UP</button>
+    <div
+    class="error-container"
+    *ngIf="authService.errorMsg" 
+  >
+    <img  src="https://img.icons8.com/color/48/null/cancel--v1.png"/>
+    <p>
+        {{ authService.errorMsg | errorMessage }}
+    </p>
+    </div>
 
-        <button type="button" class="google-btn" (click)="authService.GoogleAuth()">
-            <i class="fab fa-google-plus-g"></i>
-            Log in with Google
+    <button
+      type="submit"
+      [disabled]="registrationForm.invalid"
+      class="submit-btn"
+      (click)="authService.SignUp(userEmail.value, userPwd.value)"
+    >
+      SIGN UP
+    </button>
 
-            <img src="https://img.icons8.com/color/48/null/google-logo.png"/>
-        </button>
-    </form>
+    <button type="button" class="google-btn" (click)="authService.GoogleAuth()">
+      <i class="fab fa-google-plus-g"></i>
+      Log in with Google
+
+      <img src="https://img.icons8.com/color/48/null/google-logo.png" />
+    </button>
+  </form>
 </div>

@@ -1,4 +1,6 @@
 <div class="nav-bar">
-    <div [routerLink]="['/sign-in']" routerLinkActive="active">SIGN IN</div>
-    <div [routerLink]="['/register-user']" routerLinkActive="active">SIGN UP</div>
+    <div *ngIf="logged">Home</div>
+    <div *ngIf="logged">Posts</div>
+    <div [routerLink]="['/sign-in']" routerLinkActive="active" *ngIf="!logged">SIGN IN</div>
+    <div [routerLink]="['/register-user']" routerLinkActive="active" *ngIf="!logged">SIGN UP</div>
 </div>

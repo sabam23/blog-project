@@ -66,9 +66,10 @@ table {
     align-items: center;
     gap: 10px;
     font-family: 'Roboto', sans-serif;
-    width: 260px;
-    height: 40px;
+    width: 100%;
     background-color: white;
+    max-width: 270px;
+    height: 40px;
     border-radius: 5px;
     border: solid 1px #eae9e9;
     cursor: pointer;

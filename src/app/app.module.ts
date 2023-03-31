@@ -16,6 +16,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { RouterModule } from '@angular/router';
 import { environment } from 'enviroment';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     SignInComponent,
     SignUpComponent,
     ForgotPasswordComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    NavBarComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),

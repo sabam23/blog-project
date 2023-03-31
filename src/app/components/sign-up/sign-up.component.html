@@ -5,13 +5,46 @@
             <br>
             <input type="email" formControlName="email" placeholder="Email address" #userEmail>
         </label>
+
+        <div
+        class="error-container"
+        *ngIf="registrationForm.get('email')?.touched &&
+        registrationForm.get('email')?.invalid"
+      >
+        <img  src="https://img.icons8.com/color/48/null/cancel--v1.png"/>
+        <p>
+            Invalid Email Format
+        </p>
+      </div>
+
         <label>
             Password
             <br>
             <input type="password" formControlName="password" placeholder="Password" #userPwd>
         </label>
 
-        <button type="submit" class="submit-btn" (click)="authService.SignUp(userEmail.value, userPwd.value)">SIGN UP</button>
+        <label>
+            Repeat Password
+            <br>
+            <input type="password"  formControlName="repeatPassword" placeholder="Repeat Password" #repPassword>
+        </label>
+
+        <div
+        class="error-container"
+        *ngIf="
+        registrationForm.get('repeatPassword')?.touched &&
+        registrationForm.invalid &&
+        registrationForm.get('repeatPassword')?.value !==
+        registrationForm.get('password')?.value
+        "
+      >
+        <img  src="https://img.icons8.com/color/48/null/cancel--v1.png"/>
+        <p>
+          Password doesn't match
+        </p>
+      </div>
+
+        <button type="submit" [disabled]="registrationForm.invalid" class="submit-btn" (click)="authService.SignUp(userEmail.value, userPwd.value)">SIGN UP</button>
 
         <button type="button" class="google-btn" (click)="authService.GoogleAuth()">
             <i class="fab fa-google-plus-g"></i>

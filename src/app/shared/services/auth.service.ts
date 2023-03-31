@@ -42,7 +42,6 @@ export class AuthService {
         this.SetUserData(result.user);
       })
       .catch((error) => {
-        window.alert(error.message);
         this.errorMsg = error.message;
       });
   }
@@ -56,7 +55,6 @@ export class AuthService {
         this.SetUserData(result.user);
       })
       .catch((error) => {
-        window.alert(error.message);
         this.errorMsg = error.message;
       });
   }
@@ -103,7 +101,7 @@ export class AuthService {
         this.SetUserData(result.user);
       })
       .catch((error) => {
-        window.alert(error);
+        this.errorMsg = error.message;
       });
   }
   /* Setting up user data in the Firestore database using AngularFirestore and the AngularFirestoreDocument service for login with username and password, signup with username and password, and sign in using a social authentication provider. */

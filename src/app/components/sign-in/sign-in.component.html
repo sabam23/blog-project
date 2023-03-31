@@ -5,11 +5,22 @@
             <br>           
             <input type="email" formControlName="username" placeholder="Email address" #userName>
         </label>
+
         <label>
             Password
             <br>
             <input type="password" formControlName="password" placeholder="Password" #userPwd>
         </label>
+
+        <div
+        class="error-container"
+        *ngIf="authService.errorMsg" 
+      >
+        <img  src="https://img.icons8.com/color/48/null/cancel--v1.png"/>
+        <p>
+            {{ authService.errorMsg }}
+        </p>
+        </div>
 
         <button class="submit-btn" type="submit" (click)="authService.SignIn(userName.value, userPwd.value)">
             SIGN IN

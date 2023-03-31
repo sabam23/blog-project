@@ -53,11 +53,16 @@ table {
     background-color: rgb(8, 190, 41);
     color: white;
     font-family: 'Roboto', sans-serif;
-    
 
     &:hover {
         background-color: rgb(19, 217, 55);
     }
+
+    &:disabled {
+        background-color: #d2cece;
+        cursor: no-drop;
+    }
+    
 }
 
 .google-btn {
@@ -80,5 +85,20 @@ table {
 
     &:hover {
         background-color: #f4f4f4c1;
+    }
+}
+
+.error-container {
+    font-family: 'Roboto', sans-serif;
+    width: 260px;
+    font-size: 14px;
+    color: red;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+
+    & > img {
+        height: 22px;
     }
 }

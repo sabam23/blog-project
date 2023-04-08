@@ -1,0 +1,24 @@
+<div class="profile">
+  <div class="header">
+    <h1>User Preferences</h1>
+  </div>
+  <div *ngIf="authService.userData as user" class="user">
+    <div class="user-sidebar">
+      <img
+      class="user_img"
+      src="{{ user.photoURL ? user.photoURL : '/auth/src/assets/5907.jpg' }}"
+      alt="{{ user.displayName }}"
+    />
+
+    <h1 class="display-name">{{ user.displayName ? user.displayName : "User" }}</h1>
+    <div class="tabs">
+      <div class="tab"  [routerLink]="['/profile/account']" routerLinkActive="active">Account</div>
+      <div class="tab" routerLinkActive="active">My Posts</div>
+      <div class="tab" routerLinkActive="active">Preferences</div>
+    </div>
+    </div>
+    <div class="user-dashboard">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

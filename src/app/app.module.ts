@@ -18,6 +18,9 @@ import { environment } from 'enviroment';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ErrorMessagePipe } from './shared/pipes/error-message.pipe';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ProfileInfoComponent } from './components/profile/components/profile-info/profile-info.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { ErrorMessagePipe } from './shared/pipes/error-message.pipe';
     ForgotPasswordComponent,
     VerifyEmailComponent,
     NavBarComponent,
-    ErrorMessagePipe
+    ErrorMessagePipe,
+    ProfileComponent,
+    ProfileInfoComponent,
+    PageNotFoundComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),

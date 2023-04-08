@@ -8,9 +8,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class NavBarComponent implements OnInit {
 
-  logged: boolean = this.authService.isLoggedIn;
-
-  constructor(private authService: AuthService) {}
+  constructor(public authService: AuthService) {}
 
   ngOnInit(): void {
     

@@ -22,7 +22,7 @@
         </p>
         </div>
 
-        <button class="submit-btn" [routerLink]="['/dashboard']" type="submit" (click)="authService.SignIn(userName.value, userPwd.value)">
+        <button class="submit-btn" type="submit" (click)="authService.SignIn(userName.value, userPwd.value)">
             SIGN IN
         </button>
 
